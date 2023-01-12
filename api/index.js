@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const urlCurta = require('./models/urlCurta')
+const urlCurta = require('../models/urlCurta')
 require("dotenv").config();
 const app = express();
 
