@@ -31,4 +31,4 @@ app.get('/:urlCurta', async (req, res) => {
     res.redirect(urlEncurtada.completa);
 });
 
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 3000);
