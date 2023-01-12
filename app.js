@@ -1,9 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const urlCurta = require('./models/urlCurta')
+require("dotenv").config();
 const app = express();
 
-mongoose.connect('mongodb://localhost/urlShortener', {
+mongoose.connect(`mongodb+srv://dbUser:${process.env.DBUSER_PASSWORD}@cluster0.zustmvr.mongodb.net/?retryWrites=true&w=majority`, {
     useNewUrlParser: true, useUnifiedTopology: true
 });
 
@@ -30,4 +31,4 @@ app.get('/:urlCurta', async (req, res) => {
     res.redirect(urlEncurtada.completa);
 });
 
-app.listen(process.env.PORT || 5000)
+app.listen(process.env.PORT || 5000);
